@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Party</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: #333;
+            background-color: #f5f1e6; /* Light beige background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .password-container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #6b4226; /* Brown tone */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #5a3620;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="password-container">
+    <h1>Wedding Party</h1>
+    <p>This page is password protected.</p>
+    <input type="password" id="password" placeholder="password">
+    <button type="button" onclick="checkPassword()">Submit</button>
+    <p id="error-message" class="error"></p>
+</div>
+
+<script>
+  function checkPassword() {
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+      const correctPassword = "letsgo"; // Replace with your password
+
+      if (password === correctPassword) {
+          window.location.href = "wedding-party-content.html"; // Redirect to protected content
+      } else {
+          errorMessage.textContent = "Incorrect password. Please try again.";
+      }
+  }
+
+</script>
+
+</body>
+</html>
